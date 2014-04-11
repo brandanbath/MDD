@@ -14,6 +14,7 @@ App.controller('CoreCtrl', function($scope, $http){
 	.success(function (data) { 
 		$scope.allMovies = data.movies;
 		$scope.movie = data.movie.year;
+		$scope.movie = data.movie.poster.thumbnail;
 	})
 	.error(function (data) { console.log('error', data); });
 })

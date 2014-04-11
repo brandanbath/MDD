@@ -54,7 +54,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="brand" href="index.html">FilmViewer</a>
+          <a class="brand"><img src="img/fvlogo.png"/></a>
           <div class="nav-collapse collapse">
             <ul class="nav">
               <li class="active"><a href="index.html">Home</a></li>
@@ -65,17 +65,20 @@
         </div>
       </div>
     </div>
+    
 
     <div class="container">
-      <h1>Currently Playing</h1>
+      <h1><img src="img/playingNOW.png"/></h1>
       <!--
       <p>Use this document as a way to quick start any new project.<br> All you get is this message and a barebones HTML document.</p>
 	  -->
 		<ul class="list-group">
 			<li ng-repeat="movie in allMovies">{{movie.title}}</li>
 		</ul>
-    </div> <!-- /container -->
-
+		</div> <!-- /container -->
+		
+		{{movie.poster.thumbnail}}
+		
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
