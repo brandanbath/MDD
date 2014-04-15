@@ -10,6 +10,25 @@
 .clearfix {
   *zoom: 1;
 }
+
+ul
+{
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+#playingNow {
+	padding-top: 50px;
+}
+
+@media (max-width: 980px) {
+  #playingNow {
+    padding-top: 0px;
+  }
+}
+
+
 .clearfix:before,
 .clearfix:after {
   display: table;
@@ -3483,7 +3502,6 @@ input[type="submit"].btn.btn-mini {
   overflow: visible;
 }
 .navbar .brand {
-  float: left;
   display: block;
   padding: 10px 20px 10px;
   margin-left: -20px;
