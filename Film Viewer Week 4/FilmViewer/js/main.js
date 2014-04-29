@@ -18,7 +18,7 @@ App.config(['$routeProvider', function($routeProvider){
 }]);
 
 App.controller('CoreCtrl', function($scope, $http){
-	$scope.title = 'howdy world';
+	$scope.title = 'Film Viewer';
 	$http.jsonp('http://api.rottentomatoes.com/api/public/v1.0/lists/movies/in_theaters.json', { 
 		params: { 
 			apikey: 'kcby9f4hd7xx3pvhfukfwdrd', 
@@ -37,8 +37,18 @@ App.controller('CoreCtrl', function($scope, $http){
 
 		
 App.controller('movieController', function($scope, $http, $routeParams) {
-$scope.movie_id = $routeParams.movieId;
+	$scope.movie_id = $routeParams.movieId;
     $http.jsonp('http://api.rottentomatoes.com/api/public/v1.0/movies.json', {
+        params: {
+            apikey: 'kcby9f4hd7xx3pvhfukfwdrd',
+            callback: 'JSON_CALLBACK',
+            page_limit: '16',
+			page: '1',
+			country: 'us'
+        }
+        
+     $scope.movie = data;
+     $http.jsonp(' http://api.rottentomatoes.com/api/public/v1.0/movies/770672122.json', {
         params: {
             apikey: 'kcby9f4hd7xx3pvhfukfwdrd',
             callback: 'JSON_CALLBACK',
@@ -50,17 +60,30 @@ $scope.movie_id = $routeParams.movieId;
     .success(function (data) {
     	
     	$scope.movie_id = $routeParams.movieId;
-    	console.log (data.movie.poster.thumbnail)
+    	$scope.movie = data.movie.title;
+    	
+    	
+    	/*
+    	$scope.cover = data.movie.poster.thumbnail;
+    	
+    	$scope.cover = $routeParams.movieId.runtime;
+    	
+    	/*
+    	console.log (data.movie.poster.thumbnail)*/
+    	/*
+    	$scope.syn = $routeParams.movieId.synopsis;
+    	console.log (data.movie.synopsis)
+    	*/
+    	
         /* 
        	$scope.cover = data.movie.poster.thumbnail;
         $scope.rating = data.movie.mpaa_rating;
         $scope.time = data.movie.runtime;
         $scope.syn = data.movie.synopsis;	
-        */
-        
         $scope.rating = data.movie.mpaa_rating;
+        */
     })
     .error(function (data) { 
-    console.log('error', data); 
+    	console.log('error', data); 
     });
 })
