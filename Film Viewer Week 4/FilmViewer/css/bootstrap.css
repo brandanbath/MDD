@@ -29,7 +29,7 @@ ul
 }
 
 .brand {
-	margin: 0 auto;
+	/*margin: 0 auto;*/
 }
 
 
@@ -3508,12 +3508,22 @@ input[type="submit"].btn.btn-mini {
 .navbar .brand {
   display: block;
   padding: 10px 20px 10px;
+  /*margin: 0 auto;*/
   margin-left: -20px;
   font-size: 20px;
   font-weight: 200;
   color: #777777;
   text-shadow: 0 1px 0 #ffffff;
 }
+
+/*
+.brand {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+*/
+
 .navbar .brand:hover,
 .navbar .brand:focus {
   text-decoration: none;
