@@ -36,9 +36,9 @@ App.controller('CoreCtrl', function($scope, $http){
 
 
 		
-App.controller('movieController', function($scope, $http, $routeParams, $data) {
+App.controller('movieController', function($scope, $http, $routeParams) {
 	/*$scope.movie_id = $routeParams.movieId;*/
-	$scope.movie = $data.movieId;
+	$scope.movie = data;
     $http.jsonp('http://api.rottentomatoes.com/api/public/v1.0/movies/770672122.json', {
         params: {
             apikey: 'kcby9f4hd7xx3pvhfukfwdrd',
