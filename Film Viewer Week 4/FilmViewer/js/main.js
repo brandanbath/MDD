@@ -2,7 +2,7 @@ var App = angular.module('FilmViewer',['ngRoute']);
 
 App.config(['$routeProvider', function($routeProvider){
 	$routeProvider.
-		when('/details/:movieId',{
+		when('/details/:id',{
 			templateUrl:'views/details.html',
 			controller: 'movieController',
 			foodata: 'Details'
@@ -37,9 +37,10 @@ App.controller('CoreCtrl', function($scope, $http){
 
 		
 App.controller('movieController', function($scope, $http, $routeParams) {
-	/*$scope.movie_id = $routeParams.movieId;*/
+	$scope.movie_id = $routeParams.id;
 	$scope.movie = data;
-    $http.jsonp('http://api.rottentomatoes.com/api/public/v1.0/movies/770672122.json', {
+	console.log ("test");
+    $http.jsonp('http://api.rottentomatoes.com/api/public/v1.0/movies/' + $routeParams.id + '.json', {
         params: {
             apikey: 'kcby9f4hd7xx3pvhfukfwdrd',
             callback: 'JSON_CALLBACK',
@@ -49,32 +50,18 @@ App.controller('movieController', function($scope, $http, $routeParams) {
         }
     })
     .success(function (data) {
+
     	
     	$scope.movie_id = $routeParams.movieId;
-    	$scope.movie = data.movie.title;
+    	console.log($scope);
+    	
+    	$scope.movie = data;
     	
     	
-    	/*
-    	$scope.cover = data.movie.poster.thumbnail;
     	
-    	$scope.cover = $routeParams.movieId.runtime;
     	
-    	/*
-    	console.log (data.movie.poster.thumbnail)*/
-    	/*
-    	$scope.syn = $routeParams.movieId.synopsis;
-    	console.log (data.movie.synopsis)
-    	*/
-    	
-        /* 
-       	$scope.cover = data.movie.poster.thumbnail;
-        $scope.rating = data.movie.mpaa_rating;
-        $scope.time = data.movie.runtime;
-        $scope.syn = data.movie.synopsis;	
-        $scope.rating = data.movie.mpaa_rating;
-        */
     })
-    .error(function (data) { 
+    /*.error(function (data) { 
     	console.log('error', data); 
-    });
+    });*/
 })

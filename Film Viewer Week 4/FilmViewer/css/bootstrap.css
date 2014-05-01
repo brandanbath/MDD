@@ -13,9 +13,18 @@
 
 ul
 {
+	/*
 	list-style-type: none;
 	padding: 0;
 	margin: 0;
+	*/
+	margin: 0 auto;
+    text-align: center;
+}
+
+li {
+    display: inline-block;
+    vertical-align: top;
 }
 
 #playingNow {
@@ -233,6 +242,8 @@ body {
   line-height: 20px;
   color: #333333;
   background-color: #ffffff;
+  background-image: url('../img/bg.png');
+  background-repeat: no-repeat;
 }
 a {
   color: #0088cc;
@@ -241,8 +252,14 @@ a {
 a:hover,
 a:focus {
   color: #005580;
-  text-decoration: underline;
+  text-decoration: none;
 }
+
+a:link {color:#000000;}      /* unvisited link */
+a:visited {color:#000000;}  /* visited link */
+a:hover {color:#b4b4b4;}  /* mouse over link */
+a:active {color:#b4b4b4;}  /* selected link */
+
 .img-rounded {
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;

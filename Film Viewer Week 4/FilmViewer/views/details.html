@@ -1,13 +1,17 @@
-<h2>{{movieId}} Details</h2>
+<center>
+<h2>{{movie.title}} Details</h2>
+</center>
 
 <body ng-app="movieController">
 	
+	<center>
 	<div>
-		<h2 ng-controller = "movieController">Year: {{movieId.cover}}</h2>
-		<h2 ng-controller = "movieController">Rating: {{rating}}</h2>
+		<h2 ng-controller = "movieController">Year: {{movie_id.year}}</h2>
+		<h2 ng-controller = "movieController">Rating: {{movie.mpaa_rating}}</h2>
 		<h2 ng-controller = "movieController">Duration: {{time}}</h2>
 		<p ng-controller = "movieController">Synopsis: {{syn}}</p>
 	</div>
+	</center>
 
 
 
