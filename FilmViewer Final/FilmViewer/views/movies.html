@@ -1,0 +1,9 @@
+<center>
+	<!--Now Playing Image-->
+	<h1 class="playingNow"><img src="img/playingNOW.png"/></h1>
+</center>
+	
+	<!--List of Movies-->
+    <ul class="list-group" style="line-height:3.4">
+    	<li><a href="#/details/{{movie.id}}" ng-repeat="movie in allMovies"><br/>{{movie.title}} </a></li>
+    </ul>

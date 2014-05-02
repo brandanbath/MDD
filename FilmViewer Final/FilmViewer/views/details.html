@@ -1,0 +1,19 @@
+<!--Home Escape Hatch-->
+<center>
+	<a href="index.html"><img src="img/home.png" onmouseover="this.src='img/homeRoll.png'" onmouseout="this.src='img/home.png'" /></a>
+	
+	<!--The Selected Movies Title-->
+	<h2>{{movie.title}}</h2>
+	<div>
+		<!--Selected Movies Cover-->
+		<img ng-src="{{movie.posters.profile}}" alt="{{movie.title + 'poster'}}"/>
+		<!--Selected Movies Year-->
+		<h4>Year: {{movie.year}}</h4>
+		<!--Selected Movies Rating-->
+		<h4>Rating: {{movie.mpaa_rating}}</h4>
+		<!--Selected Movies Runtime-->
+		<h4>Duration: {{movie.runtime}} mins</h4>
+		<!--Selected Movies Synopsis-->
+		<p>Synopsis: {{movie.synopsis}}</p>
+	</div>
+</center>
